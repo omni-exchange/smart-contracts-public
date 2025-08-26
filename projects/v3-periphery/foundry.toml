@@ -1,0 +1,23 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["../../lib"]
+allow_paths = ["../"]
+
+optimizer = true
+optimizer_runs = 1_000_000
+bytecode_hash = "none"
+
+additional_compiler_profiles = [ 
+    { name = "default", optimizer_runs = 1_000_000, solc_version = "0.7.6" },
+    { name = "low", optimizer_runs = 2_000, solc_version = "0.7.6" },
+    { name = "lowest", optimizer_runs = 1_000, solc_version = "0.7.6" } 
+]
+
+compilation_restrictions = [
+    { paths = "NonfungibleTokenPositionDescriptor.sol", optimizer_runs = 1_000, solc_version = "0.7.6" },
+    { paths = "NFTDescriptor.sol", optimizer_runs = 1_000, solc_version = "0.7.6" },
+    { paths = "NonfungiblePositionManager.sol", optimizer_runs = 1_000, solc_version = "0.7.6" }
+]
+
+auto_detect_remappings = false

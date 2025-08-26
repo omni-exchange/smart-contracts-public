@@ -1,0 +1,22 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["../../lib"]
+allow_paths = ["../"]
+
+optimizer = true
+optimizer_runs = 1_000_000
+bytecode_hash = "none"
+
+additional_compiler_profiles = [ 
+    { name = "default", optimizer_runs = 1_000_000 },
+    { name = "lowest", optimizer_runs = 400 } 
+]
+
+compilation_restrictions = [
+    { paths = "OmniV3Pool.sol", optimizer_runs = 400 },
+    { paths = "OmniV3PoolDeployer.sol", optimizer_runs = 400 },
+    { paths = "OutputCodeHash.sol", optimizer_runs = 400 }
+]
+
+auto_detect_remappings = false

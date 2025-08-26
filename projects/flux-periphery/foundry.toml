@@ -1,0 +1,24 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["../../lib"]
+allow_paths = ["../"]
+
+solc_version = "0.8.26"
+optimizer_runs = 1_000_000
+via_ir = true
+ffi = true
+gas_limit = "3000000000"
+
+evm_version = "cancun"
+bytecode_hash = "none"
+
+additional_compiler_profiles = [
+  { name = "clPosm", optimizer_runs = 9000 }
+]
+
+compilation_restrictions = [
+  { paths = "src/pool-cl/CLPositionManager.sol", optimizer_runs = 9000 }
+]
+
+auto_detect_remappings = false

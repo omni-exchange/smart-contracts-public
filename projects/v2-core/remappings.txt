@@ -1,0 +1,2 @@
+@openzeppelin/contracts/=../../lib/openzeppelin-contracts-v4.2.0/contracts/
+@uniswap/lib/=../../lib/solidity-lib/

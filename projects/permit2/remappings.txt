@@ -1,0 +1,2 @@
+solmate/=../../lib/solmate-v6.6.2/
+openzeppelin-contracts/=../../lib/openzeppelin-contracts-v4.7.0/
